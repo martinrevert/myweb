@@ -3,6 +3,7 @@ const fs = require('fs');
 const http = require('http');
 const https = require('https');
 const express = require('express');
+var favicon = require('serve-favicon');
 
 const app = express();
 
@@ -26,6 +27,8 @@ const credentials = {
 //  });
 
 app.use(express.static('public'));
+
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 /* final catch-all route to index.html defined last */
 app.get('/*', (req, res) => {
