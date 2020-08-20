@@ -1,0 +1,12 @@
+# robotstxt.org/
+
+User-agent: *
+Disallow: /crashreportsviewer/
+Disallow: /atGCM/
+Disallow: /css/
+Disallow: /fonts/
+Disallow: /js/
+Disallow: /zuckerberga/
+
+
+
