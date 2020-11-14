@@ -1,0 +1,5 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target" : { "namespace": "android_app", "package_name": "ar.com.martinrevert.twa",
+                   "sha256_cert_fingerprints": ["E5:D6:CA:50:21:49:8E:14:BB:97:B3:85:2A:86:DA:1A:86:49:A2:F7:5A:69:D0:D8:E7:FA:67:FE:56:8D:EF:FC"] }
+    }]

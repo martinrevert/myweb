@@ -1,0 +1,24 @@
+{
+    "name": "Progressive Web App Martin Revert",
+    "short_name": "Martin Revert PWA",
+    "description": "Progressive Web App and Personal Site",
+    "icons": [
+      {
+        "src": "/img/splash-screen.png",
+        "sizes": "512x512",
+        "type": "image/png",
+        "purpose": "any"
+      },
+      {
+      "src": "/img/maskable_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+      }
+    ],
+    "start_url": "/",
+    "scope": "/",
+    "display": "fullscreen",
+    "theme_color": "#000000",
+    "background_color": "#000000"
+  }
