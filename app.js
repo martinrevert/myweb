@@ -96,6 +96,9 @@ app.get("/gmaps", (req,res) => {
 
 });
 
+app.use('/latorrentola', serveIndex(path.join(__dirname + '/latorrentola')));
+app.use('/latorrentola', express.static(path.join(__dirname, 'latorrentola'))); // serve the actual files
+
 //app.use((req, res) => {
 //	res.send('Hello there, this site is under construction, come back soon!!!');
 //});
@@ -109,9 +112,9 @@ app.use(express.static('public'));
 app.use(favicon(__dirname + '/public/favicon.ico'));
 
 /* final catch-all route to index.html defined last */
-app.get('/*', (req, res) => {
-        res.sendFile(__dirname + '/index.html');
-  })
+//app.get('/*', (req, res) => {
+//        res.sendFile(__dirname + '/index.html');
+//  })
 
 
 // Starting both http & https servers
