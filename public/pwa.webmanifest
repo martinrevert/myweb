@@ -20,5 +20,23 @@
     "scope": "/",
     "display": "fullscreen",
     "theme_color": "#000000",
-    "background_color": "#000000"
+    "background_color": "#000000",
+    "related_applications": [
+        {
+          "platform": "play",
+          "url": "https://play.google.com/store/apps/details?id=ar.com.martinrevert.twa",
+          "id": "ar.com.martinrevert.twa",
+          "min_version": "1000",
+          "fingerprints": [
+            {
+              "type": "sha256_cert",
+              "value": "E5:D6:CA:50:21:49:8E:14:BB:97:B3:85:2A:86:DA:1A:86:49:A2:F7:5A:69:D0:D8:E7:FA:67:FE:56:8D:EF:FC"
+            }
+          ]
+        },
+        {
+          "platform": "webapp",
+          "url": "https://martinrevert.com.ar/pwa.manifest"
+        }
+      ]
   }

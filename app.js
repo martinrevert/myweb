@@ -9,11 +9,17 @@ const express = require('express');
 var favicon = require('serve-favicon');
 var serveIndex = require('serve-index');
 
+
+
+
 const Http2 = require('http2');
 
 
 const app = express();
 const imagesDir = '/media/pelis/www/public/img/';
+
+//const lighthouse = require('lighthouse');
+//const chromeLauncher = require('chrome-launcher');
 
 const getFiles = () => {
     const files = new Map();
@@ -59,6 +65,24 @@ app.use (function (req, res, next) {
             res.redirect('https://' + req.headers.host + req.url);
     }
 });
+
+
+
+/*
+app.get('/lighthouse', async (req, res) => {
+    // Check that the url query parameter exists
+    if(req.query && req.query.url) {
+        // decode the url
+        const url = decodeURIComponent(req.query.url)    
+        const chrome = await chromeLauncher.launch({chromeFlags: ['--headless', '--no-sandbox','--disable-gpu']});
+        const options = {logLevel: 'info', output: 'html', port: chrome.port};
+        const runnerResult = await lighthouse(url, options);
+
+        await chrome.kill();
+        res.json(runnerResult.lhr)
+    }
+});
+*/
 
 app.get("/error404", (req,res) => {
 	var d = domain.create();

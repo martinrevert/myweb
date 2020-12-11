@@ -9,3 +9,10 @@ function init() {
       });
   }
 }
+
+async function start() {
+  const relatedApps = await navigator.getInstalledRelatedApps();
+  relatedApps.forEach((app) => {
+      console.log(app.id, app.platform, app.url);
+  });
+}
