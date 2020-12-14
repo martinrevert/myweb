@@ -36,7 +36,7 @@
         },
         {
           "platform": "webapp",
-          "url": "https://martinrevert.com.ar/pwa.manifest"
+          "url": "https://martinrevert.com.ar/pwa.webmanifest"
         }
       ]
   }

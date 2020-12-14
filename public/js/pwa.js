@@ -10,9 +10,17 @@ function init() {
   }
 }
 
-async function start() {
-  const relatedApps = await navigator.getInstalledRelatedApps();
-  relatedApps.forEach((app) => {
-      console.log(app.id, app.platform, app.url);
-  });
+async function getInstalledApps() {
+  const installedApps = await navigator.getInstalledRelatedApps();
+  const giraStatus = document.getElementById('relatedStatus');
+  giraStatus.textContent = `resolved (${installedApps.length})`;
+  const giraResults = document.getElementById('relatedResults');
+  giraResults.textContent = JSON.stringify(installedApps, null, 2);
+}
+
+if ('getInstalledRelatedApps' in navigator) {
+  getInstalledApps();
+} else {
+  const giraStatus = document.getElementById('giraStatus');
+  giraStatus.textContent = `not supported`;
 }

@@ -9,129 +9,172 @@
 <!--[if gt IE 8]><!-->
 <html class="no-js" lang="en">
 <!--<![endif]-->
+
 <head>
     <link rel="manifest" href="/pwa.webmanifest">
-    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
-    <meta name="theme-color" content="#000000"/>
+    <meta http-equiv="Content-Security-Policy"
+        content="default-src *; style-src 'self' http://* 'unsafe-inline'; script-src 'self' http://* 'unsafe-inline' 'unsafe-eval'" />
+    <meta name="theme-color" content="#000000" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Martin Revert - Software Developer</title>
     <meta name="description"
-          content="Official web page of Martin Revert, Android Developer and Full Stack Web Technologies Expert">
-          <link rel="apple-touch-icon" href="/img/apple-touch.png">
+        content="Official web page of Martin Revert, Android Developer and Full Stack Web Technologies Expert">
+    <link rel="apple-touch-icon" href="/img/apple-touch.png">
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="css/socialbar.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <!--
-    <link href="/your-path-to-fontawesome/css/fontawesome.css" rel="stylesheet">
-    <link href="/your-path-to-fontawesome/css/brands.css" rel="stylesheet">
-    <link href="/your-path-to-fontawesome/css/solid.css" rel="stylesheet">
-    -->
 
 </head>
+
 <body>
-<!--[if lt IE 7]>
+    <!--[if lt IE 7]>
 <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
     your browser</a> to improve your experience.</p>
 <![endif]-->
 
-<!-- <nav class="navbar navbar-expand-lg navbar-inverse fixed-top bg-inverse"> -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">  
-    <a class="navbar-brand" href="#"> <i class="fa fa-android"></i> Martin Revert</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
+    <!-- <nav class="navbar navbar-expand-lg navbar-inverse fixed-top bg-inverse"> -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"> <i class="fa fa-android"></i> Martin Revert</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
-           <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Forzar errores HTTP
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
-              <a class="dropdown-item" href="/error404">Forzar error 404</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" href="/error500">Forzar error 500</a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Forzar errores HTTP
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                        <a class="dropdown-item" href="/error404">Forzar error 404</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/error500">Forzar error 500</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Abrir links por fuera de TWA
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <a class="dropdown-item" rel="noopener noreferrer" target="_blank"
+                            href="https://www.claro.com.ar/personas/lugares-medios-pago">Link afuera</a>
+                        <a class="dropdown-item" href="https://www.claro.com.ar/personas/lugares-medios-pago">Link
+                            adentro</a>
+                        <a class="dropdown-item" href="/iframe">iFrame</a>
+                        <a class="dropdown-item" rel="noopener noreferrer" target="_blank"
+                            href="https://goo.gl/maps/H1bCtexReePe2gM67">Google Maps</a>
+                        <a class="dropdown-item" target="_self"
+                            href="https://miclaro.claro.com.ar/web/guest/bienvenido?utm_source=icono&utm_medium=Internos&utm_campaign=miicono&utm_content=iconoescritorio">MiClaro</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button"
+                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Pruebas de Concepto
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                    <a class="dropdown-item" href="/battery">Battery Example</a>
+                </div>
+                </li>
+            </ul>
+    </nav>
+
+    <video autoplay loop muted id="background">
+        <source src="/video/untitled.webm" type="video/mp4">
+    </video>
+
+    <div id="msg"></div>
+    <div id="notis"></div>
+    <div id="token"></div>
+    <div id="err"></div>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+
+    <div class="jumbotron">
+
+        <h1 class="display-3">Hi!</h1>
+
+        <p class="text-white">
+            I am a software developer and consultant.
+            My specialties are native Android apps and Full Stack Web Technologies. but also projects, teams and tech
+            product management.
+        </p>
+
+
+    </div>
+    <div class="container">
+
+        <div class="row">
+            <div class="col-md-4">
+                <a href="https://www.linkedin.com/in/martinrevert"> <i></i> <span class="fa-stack fa-lg"> <i
+                            class="fa fa-square-o fa-stack-2x"></i> <i class="fa fa-linkedin fa-stack-1x"></i> </span>
+                    LinkedIn</a>
             </div>
-        </li>
-            <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-              Abrir links por fuera de TWA
-            </a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-              <a class="dropdown-item" rel="noopener noreferrer" target="_blank" href="https://www.claro.com.ar/personas/lugares-medios-pago">Link afuera</a>
-              <a class="dropdown-item" href="https://www.claro.com.ar/personas/lugares-medios-pago">Link adentro</a>
-              <a class="dropdown-item" href="/iframe">iFrame</a>
-              <a class="dropdown-item" rel="noopener noreferrer" target="_blank" href="https://goo.gl/maps/H1bCtexReePe2gM67">Google Maps</a>
-              <a class="dropdown-item" target="_self" href="https://miclaro.claro.com.ar/web/guest/bienvenido?utm_source=icono&utm_medium=Internos&utm_campaign=miicono&utm_content=iconoescritorio">MiClaro</a>
+            <div class="col-md-4">
+                <a href="https://github.com/martinrevert"> <i></i> <span class="fa-stack fa-lg"> <i
+                            class="fa fa-square-o fa-stack-2x"></i> <i class="fa fa-github fa-stack-1x"></i> </span>
+                    Github </a>
             </div>
-          </li>
-      </ul>
-</nav>
-
-<video autoplay loop muted id="background">
-    <source src="/video/untitled.webm" type="video/mp4">
-</video>
-
-<!-- Main jumbotron for a primary marketing message or call to action -->
-
-<div class="jumbotron">
-
-    <h1 class="display-3">Hi!</h1>
-
-   <p class="text-white">
-        I am a software developer and consultant.
-        My specialties are native Android apps and Full Stack Web Technologies. but also projects, teams and tech product management.
-    </p>
+            <div class="col-md-4">
+                <a href="http://stackoverflow.com/users/876001/martin-revert"> <i></i> <span class="fa-stack fa-lg"> <i
+                            class="fa fa-square-o fa-stack-2x"></i> <i class="fa fa-stack-overflow fa-stack-1x"></i>
+                    </span>
+                    Stack Overflow </a>
+            </div>
+            <div class="col-md-4">
+                <a href="https://twitter.com/martinrevert"> <i></i> <span class="fa-stack fa-lg"> <i
+                            class="fa fa-square-o fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x"></i> </span>
+                    Twitter
+                </a>
+            </div>
 
 
-</div>
-<div class="container">
 
-    <div class="row">
-        <div class="col-md-4">
-            <a href="https://www.linkedin.com/in/martinrevert"> <i></i> <span
-                    class="fa-stack fa-lg"> <i
-                    class="fa fa-square-o fa-stack-2x"></i> <i class="fa fa-linkedin fa-stack-1x"></i> </span>
-                LinkedIn</a>
         </div>
-        <div class="col-md-4">
-            <a href="https://github.com/martinrevert"> <i></i> <span class="fa-stack fa-lg"> <i
-                    class="fa fa-square-o fa-stack-2x"></i> <i class="fa fa-github fa-stack-1x"></i> </span>
-                Github </a>
-        </div>
-        <div class="col-md-4">
-            <a href="http://stackoverflow.com/users/876001/martin-revert"> <i></i> <span class="fa-stack fa-lg"> <i
-                    class="fa fa-square-o fa-stack-2x"></i> <i
-                    class="fa fa-stack-overflow fa-stack-1x"></i> </span>
-                Stack Overflow </a>
-        </div>
-        <div class="col-md-4">
-            <a href="https://twitter.com/martinrevert"> <i></i> <span class="fa-stack fa-lg"> <i
-                    class="fa fa-square-o fa-stack-2x"></i> <i class="fa fa-twitter fa-stack-1x"></i> </span>
-                Twitter
-            </a>
-        </div>
+
+        <hr>
 
     </div>
 
-    <hr>
+    <!-- /container -->
 
-</div>
+    <div id="relatedStatus" class="col-me-4" style="color:white">
 
-<!-- /container -->
-<footer class="footer" id="footer" style="color:white">
-    <span>&nbsp;&nbsp;&nbsp;&copy; Martin Revert 2020</span>
-</footer>
+    </div>
 
-<!-- Latest compiled and minified JavaScript -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
-<script src="/js/pwa.js"></script>
-<script src="/js/status.js"></script>
+
+    <div id="relatedResults" class="col-me-4" style="color:white">
+
+    </div>
+
+
+
+
+    <footer class="footer" id="footer" style="color:white">
+        <span>&nbsp;&nbsp;&nbsp;&copy; Martin Revert 2020</span>
+    </footer>
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js"
+        integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s"
+        crossorigin="anonymous"></script>
+    <script src="/js/pwa.js"></script>
+    <script src="/js/status.js"></script>
+
 
 </body>
+
 </html>
