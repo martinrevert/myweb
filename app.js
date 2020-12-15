@@ -8,19 +8,16 @@ const http2 = require('http2');
 const express = require('express');
 var favicon = require('serve-favicon');
 var serveIndex = require('serve-index');
+const lighthouse = require('lighthouse');
+const chromeLauncher = require('chrome-launcher');
 
-
-
-
-const Http2 = require('http2');
+//const Http2 = require('http2');
 
 
 const app = express();
-const imagesDir = '/media/pelis/www/public/img/';
+//const imagesDir = '/media/pelis/www/public/img/';
 
-//const lighthouse = require('lighthouse');
-//const chromeLauncher = require('chrome-launcher');
-
+/*
 const getFiles = () => {
     const files = new Map();
 
@@ -44,6 +41,7 @@ const getFiles = () => {
 };
 
 const files = getFiles();
+*/
 
 // Certificate
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/martinrevert.com.ar/privkey.pem', 'utf8');
@@ -56,20 +54,7 @@ const credentials = {
     ca: ca
 };
 
-app.use(function (req, res, next) {
-    if (req.secure) {
-        // request was via https, so do no special handling
-        next();
-    } else {
-        // request was via http, so redirect to https
-        res.redirect('https://' + req.headers.host + req.url);
-    }
-});
-
-
-
-/*
-app.get('/lighthouse', async (req, res) => {
+app.get("/lighthouse", async (req, res) => {
     // Check that the url query parameter exists
     if(req.query && req.query.url) {
         // decode the url
@@ -82,7 +67,16 @@ app.get('/lighthouse', async (req, res) => {
         res.json(runnerResult.lhr)
     }
 });
-*/
+
+app.use(function (req, res, next) {
+    if (req.secure) {
+        // request was via https, so do no special handling
+        next();
+    } else {
+        // request was via http, so redirect to https
+        res.redirect('https://' + req.headers.host + req.url);
+    }
+});
 
 app.get("/error404", (req, res) => {
     var d = domain.create();
@@ -157,6 +151,7 @@ httpsServer.listen(4000, () => {
     console.log('HTTPS Server running on port 443');
 });
 
+/*
 const PORT = 60000
 
 Http2.createSecureServer({
@@ -175,3 +170,5 @@ Http2.createSecureServer({
 }).listen(PORT, 'localhost', () => {
     console.log(`Native HTTP/2 running at https://localhost:${PORT}`)
 })
+
+*/ 
