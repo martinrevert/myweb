@@ -116,7 +116,11 @@ app.get("/gmaps", (req, res) => {
 
 app.get("/battery", (req, res) => {
     res.sendFile(__dirname + '/battery.html');
-})
+});
+
+app.get("/poclighthouse", (req, res) => {
+    res.sendFile(__dirname + '/poclighthouse.html');
+});
 
 app.use('/latorrentola', serveIndex(path.join(__dirname + '/latorrentola')));
 app.use('/latorrentola', express.static(path.join(__dirname, 'latorrentola'))); // serve the actual files
