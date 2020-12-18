@@ -59,8 +59,9 @@ app.get("/lighthouse", async (req, res) => {
     if(req.query && req.query.url) {
         // decode the url
         const url = decodeURIComponent(req.query.url)    
-        const chrome = await chromeLauncher.launch({chromeFlags: ['--headless', '--no-sandbox','--disable-gpu']});
-        const options = {logLevel: 'info', output: 'html', port: chrome.port};
+        //const chrome = await chromeLauncher.launch({chromeFlags: ['--headless', '--no-sandbox','--disable-gpu']});
+        const chrome = await chromeLauncher.launch({chromeFlags: ['--headless', '--no-sandbox','--force-fieldtrials=*BackgroundTracing/default/']});
+        const options = {logLevel: 'info', onlyCategories: ['performance'], output: 'html', port: chrome.port};
         const runnerResult = await lighthouse(url, options);
 
         await chrome.kill();
