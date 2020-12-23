@@ -1,9 +1,6 @@
 const CACHE_NAME = 'service-worker-cache';
 const toCache = [
   '/',
- // '/index.html.br',
- // '/index.html.gz',
- // '/index.html',
   '/css/socialbar.css',
   '/css/main.css',
   '/js/pwa.js',

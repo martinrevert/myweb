@@ -3,45 +3,17 @@ const fs = require('fs');
 const path = require('path');
 const Mime = require('mime');
 const http = require('http');
-const https = require('https');
-const http2 = require('http2');
+//const https = require('https');
+const spdy = require('spdy'); 
 const express = require('express');
 var favicon = require('serve-favicon');
 var serveIndex = require('serve-index');
 const lighthouse = require('lighthouse');
 const chromeLauncher = require('chrome-launcher');
 
-//const Http2 = require('http2');
-
-
 const app = express();
-//const imagesDir = '/media/pelis/www/public/img/';
 
-/*
-const getFiles = () => {
-    const files = new Map();
 
-    fs.readdirSync(imagesDir).forEach(fileName => {
-        const filePath = path.join(imagesDir, fileName);
-        console.log(filePath);
-        const fileDescriptor = fs.openSync(filePath, "r");
-        const stat = fs.fstatSync(fileDescriptor);
-        const contentType = Mime.lookup(filePath);
-        files.set(`/${fileName}`, {
-            filePath,
-            fileDescriptor,
-            headers: {
-                "content-length": stat.size,
-                "last-modified": stat.mtime.toUTCString(),
-                "content-type": contentType,
-            },
-        });
-    });
-    return files;
-};
-
-const files = getFiles();
-*/
 
 // Certificate
 const privateKey = fs.readFileSync('/etc/letsencrypt/live/martinrevert.com.ar/privkey.pem', 'utf8');
@@ -146,7 +118,7 @@ app.use(favicon(__dirname + '/public/favicon.ico'));
 
 // Starting both http & https servers
 const httpServer = http.createServer(app);
-const httpsServer = https.createServer(credentials, app);
+const httpsServer = spdy.createServer(credentials, app);
 
 httpServer.listen(3000, () => {
     console.log('HTTP Server running on port 80');
@@ -155,25 +127,3 @@ httpServer.listen(3000, () => {
 httpsServer.listen(4000, () => {
     console.log('HTTPS Server running on port 443');
 });
-
-/*
-const PORT = 60000
-
-Http2.createSecureServer({
-    credentials
-}, (req, res) => {
-    // res.stream is the Duplex stream.
-    for (let i = 1; i <= 100; i++) {
-        // Server push feature
-        const path = `/media/pelis/www/public/css`;
-        const file = files.get(path)
-        res.stream.pushStream({ [Http2.constants.HTTP2_HEADER_PATH]: path }, (err, pushStream) => {
-            pushStream.respondWithFD(file.fileDescriptor, file.headers)
-        })
-    }
-    stream.respond({ ':status': 200 });
-}).listen(PORT, 'localhost', () => {
-    console.log(`Native HTTP/2 running at https://localhost:${PORT}`)
-})
-
-*/ 
